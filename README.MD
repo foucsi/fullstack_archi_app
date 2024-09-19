@@ -126,11 +126,11 @@ People *love* thorough bug reports. I'm not even kidding.
 
 ## License
 
-By contributing, you agree that your contributions will be licensed under its [Your License] License.
+Coming soon
 
 ## Recognizing Contributors
 
-We greatly appreciate everyone who contributes to [Project Name]! Your commitment and creativity make this project what it is. To express our gratitude, we will:
+We greatly appreciate everyone who contributes to fullstack-app! Your commitment and creativity make this project what it is. To express our gratitude, we will:
 
 - Mention all contributors in our CONTRIBUTORS.md file
 - Regularly share updates about significant contributions on our social media channels (Twitter, LinkedIn, etc.)
@@ -139,7 +139,6 @@ We greatly appreciate everyone who contributes to [Project Name]! Your commitmen
 
 Join us in this open-source journey and become part of our growing community!
 
-For more information on how we recognize contributions, please check our [contributor recognition policy](link_to_policy).
 
 ## Contributors ✨
 
