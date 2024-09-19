@@ -46,7 +46,7 @@ backend/
 1. Clone the repository and navigate to the backend folder:
 
     ```bash
-    git clone https://github.com/username/fullstack-app.git
+    git clone https://github.com/foucsi/fullstack-app.git
     cd fullstack-app/backend
     ```
 

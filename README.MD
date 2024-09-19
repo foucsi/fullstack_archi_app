@@ -42,7 +42,7 @@ For more details about the frontend structure and setup, check the [frontend REA
 1. Clone the repository:
 
     ```bash
-    git clone https://github.com/username/fullstack-app.git
+    git clone https://github.com/foucsi/fullstack-app.git
     ```
 
 2. Navigate to the backend folder and install dependencies:
