@@ -148,7 +148,7 @@ Thanks to the following contributor for their work on this project:
 <table>
   <tr>
     <td align="center">
-      <a href="https://github.com/ton_nom_utilisateur">
+      <a href="https://github.com/foucsi">
         <img src="https://avatars.githubusercontent.com/foucsi?v=4" width="100px;" alt="ton_nom_utilisateur"/>
         <br /><sub><b>Julien Foucart</b></sub>
       </a>
