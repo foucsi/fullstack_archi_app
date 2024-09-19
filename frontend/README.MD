@@ -1,38 +1,170 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Frontend - Fullstack App
 
-## Getting Started
+## Description
 
-First, run the development server:
+Welcome to the **frontend** part of the **Fullstack App** project. This project uses **Next.js** with **TypeScript**, **Redux** for global state management, and **Tailwind CSS** for styling. The architecture is designed to be **scalable**, **modular**, and **maintainable**.
+
+## Technologies used
+
+- **Next.js**: A React framework for server-side rendering and static page generation.
+- **TypeScript**: A strongly typed programming language for reliable and maintainable code.
+- **Redux Toolkit**: Used to manage the global state of the application.
+- **Tailwind CSS**: A utility-first CSS framework for rapid UI development.
+
+## Project Structure
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
+my-next-app/
+├── public/
+│   ├── images/                # Static images and files
+│   └── favicon.ico            # Website favicon
+├── src/
+│   ├── components/            # Reusable components
+│   │   ├── common/            # Common components (buttons, cards, etc.)
+│   │   ├── layout/            # Layout components (Header, Footer, etc.)
+│   │   └── specific/          # Page-specific components
+│   ├── pages/                 # Application pages
+│   │   ├── api/               # API routes if necessary
+│   │   ├── _app.tsx           # Application entry point (with Redux Provider)
+│   │   ├── _document.tsx      # Custom HTML and Head
+│   │   └── index.tsx          # Main page (homepage)
+│   ├── styles/                # Style files (Tailwind CSS)
+│   │   ├── globals.css        # Global styles including Tailwind imports
+│   │   └── Home.module.css    # CSS modules specific to the homepage
+│   ├── store/                 # Redux state management
+│   │   ├── index.ts           # Redux store configuration
+│   │   └── slices/            # Slices for state management
+│   │       └── userSlice.ts   # Example slice for user state management
+│   ├── hooks/                 # Custom React hooks
+│   ├── contexts/              # React contexts for global state
+│   ├── utils/                 # Utility functions
+│   ├── services/              # API calls or external logic
+│   └── config/                # Configuration files
+├── .env.local                 # Local environment variables
+├── .gitignore                 # Git ignore file
+├── next.config.js             # Next.js configuration
+├── tailwind.config.js         # Tailwind CSS configuration
+├── postcss.config.js          # PostCSS configuration (required for Tailwind)
+├── tsconfig.json              # TypeScript configuration
+└── README.md                  # Project documentation
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Installation
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+### Prerequisites
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+- **Node.js** >= 14.x
+- **npm** or **yarn**
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+### Installation steps
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+1. **Clone the repository**:
 
-## Learn More
+```bash
+   git clone https://github.com/foucsi/fullstack-app-frontend.git
+   cd fullstack-app-frontend
+```
 
-To learn more about Next.js, take a look at the following resources:
+2. **Install dependencies**:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```bash
+   npm install
+   # or
+   yarn install
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+3. **Set up environment variables**:
 
-## Deploy on Vercel
+Copy the .env.example file and rename it to .env.local, then add your environment variables:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+```bash 
+cp .env.example .env.local
+```
+Modify the variables according to your setup (e.g., NEXT_PUBLIC_API_URL).
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+4. **Run the application in development mode**:
+
+```bash
+   npm run dev
+   # or
+   yarn dev
+```
+
+The app will be available at http://localhost:3000.
+
+## Available Scripts
+
+- **`dev`**: Runs the development server.
+- **`build`**: Builds the app for production.
+- **`start`**: Starts the app in production mode.
+- **`lint`**: Runs ESLint to check code quality.
+
+## Redux Setup
+
+The Redux store is configured in `src/store/index.ts`, with different slices in `src/store/slices/`.
+
+Here is an example of a slice for user management in `userSlice.ts`:
+
+# User Slice
+
+```typescript
+import { createSlice, PayloadAction } from '@reduxjs/toolkit';
+
+interface UserState {
+  value: string | null;
+}
+
+const initialState: UserState = {
+  value: null,
+};
+
+export const userSlice = createSlice({
+  name: 'user',
+  initialState,
+  reducers: {
+    login: (state, action: PayloadAction<string>) => {
+      state.value = action.payload;
+    },
+    logout: (state) => {
+      state.value = null;
+    },
+  },
+});
+
+export const { login, logout } = userSlice.actions;
+
+export default userSlice.reducer;
+```
+
+## Styling with Tailwind CSS
+
+This project uses **Tailwind CSS** for styling. Tailwind utility classes are used directly in components for rapid development.
+
+The Tailwind setup is in `src/styles/globals.css`, and the Tailwind classes are available throughout the project.
+
+Here’s an example of using Tailwind in a component:
+
+```tsx
+const Home = () => {
+  return (
+    <div className="min-h-screen bg-gray-100 flex items-center justify-center">
+      <h1 className="text-4xl font-bold text-blue-500">Hello Tailwind!</h1>
+    </div>
+  );
+};
+
+export default Home;
+```
+## Contribution
+
+Contributions are welcome! Follow these steps to contribute:
+
+1. Fork the repository.
+2. Create a new branch for your feature:
+
+```bash
+   git checkout -b feature/my-feature
+```
+
+3.Make your changes and test them.
+4.Submit a pull request.
