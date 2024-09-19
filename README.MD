@@ -76,6 +76,85 @@ For more details about the frontend structure and setup, check the [frontend REA
 
 3. The backend server runs on `http://localhost:5000` by default, and the frontend on `http://localhost:3000`. The frontend will communicate with the backend using RESTful APIs.
 
-## Contributing
+# Contributing to fullstack-app
 
-If you'd like to contribute to this project, feel free to submit a pull request or open an issue.
+We love your input! We want to make contributing to this project as easy and transparent as possible, whether it's:
+
+- Reporting a bug
+- Discussing the current state of the code
+- Submitting a fix
+- Proposing new features
+- Becoming a maintainer
+
+## We Develop with Github
+
+We use github to host code, to track issues and feature requests, as well as accept pull requests.
+
+## We Use [Github Flow](https://guides.github.com/introduction/flow/index.html), So All Code Changes Happen Through Pull Requests
+
+Pull requests are the best way to propose changes to the codebase. We actively welcome your pull requests:
+
+1. Fork the repo and create your branch from `main`.
+2. If you've added code that should be tested, add tests.
+3. If you've changed APIs, update the documentation.
+4. Ensure the test suite passes.
+5. Make sure your code lints.
+6. Issue that pull request!
+
+## Report bugs using Github's [issues](https://github.com/yourproject/yourrepository/issues)
+
+We use GitHub issues to track public bugs. Report a bug by [opening a new issue](https://github.com/yourproject/yourrepository/issues/new); it's that easy!
+
+## Write bug reports with detail, background, and sample code
+
+**Great Bug Reports** tend to have:
+
+- A quick summary and/or background
+- Steps to reproduce
+   - Be specific!
+   - Give sample code if you can.
+- What you expected would happen
+- What actually happens
+- Notes (possibly including why you think this might be happening, or stuff you tried that didn't work)
+
+People *love* thorough bug reports. I'm not even kidding.
+
+## Use a Consistent Coding Style
+
+* 2 spaces for indentation rather than tabs
+* You can try running `npm run lint` for style unification
+
+## License
+
+By contributing, you agree that your contributions will be licensed under its [Your License] License.
+
+## Recognizing Contributors
+
+We greatly appreciate everyone who contributes to [Project Name]! Your commitment and creativity make this project what it is. To express our gratitude, we will:
+
+- Mention all contributors in our CONTRIBUTORS.md file
+- Regularly share updates about significant contributions on our social media channels (Twitter, LinkedIn, etc.)
+- Highlight the most active contributors on our website and in our newsletters
+- Offer regular contributors the opportunity to become project maintainers
+
+Join us in this open-source journey and become part of our growing community!
+
+For more information on how we recognize contributions, please check our [contributor recognition policy](link_to_policy).
+
+## Contributors ✨
+
+Thanks to the following contributor for their work on this project:
+
+<table>
+  <tr>
+    <td align="center">
+      <a href="https://github.com/ton_nom_utilisateur">
+        <img src="https://avatars.githubusercontent.com/foucsi?v=4" width="100px;" alt="ton_nom_utilisateur"/>
+        <br /><sub><b>Julien Foucart</b></sub>
+      </a>
+      <br />
+      💻 Code and 📖 Documentation
+    </td>
+  </tr>
+</table>
+
