@@ -3,6 +3,7 @@ require("./src/models/connection");
 
 var express = require('express');
 
+const authManager = require("./src/api/middlewares/authMiddleware")
 const errorHandler = require("./src/api/middlewares/errorHandler")
 
 
@@ -29,7 +30,7 @@ app.use('/', indexRouter);
 app.use('/users', usersRouter);
 
 
-
+app.use(authManager)
 //Warning, this generic middlewares should be the last one
 app.use(errorHandler);
 
