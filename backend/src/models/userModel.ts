@@ -1,4 +1,4 @@
-const mongoose = require("mongoose");
+import mongoose, { Schema, Document } from 'mongoose';
 
 
 export interface IUser extends Document {
@@ -7,11 +7,10 @@ export interface IUser extends Document {
     password: string;
     role: string;
     createdAt: Date;
-    comparePassword(candidatePassword: string): Promise<boolean>;
 }
 
 // Schéma de l'utilisateur
-const userSchema = new mongoose.Schema(
+const userSchema :Schema<IUser> = new mongoose.Schema(
     {
         username: {
             type: String,
