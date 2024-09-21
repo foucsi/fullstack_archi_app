@@ -9,7 +9,7 @@ const {sendResponse} = require ("../../utils/sendResponse")
  */
 
 exports.getAllUsers = asyncHandler(async (req, res, next) => {
-    const users = await User.find()
+    const users = await User.find().select("-password")
     if(users.length === 0) {
         const err = new Error("No users found")
         return next(err)
