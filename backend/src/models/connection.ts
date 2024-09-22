@@ -1,14 +1,13 @@
-const mongoose = require("mongoose");
-const connectionString = process.env.CONNECTION_STRING;
+import mongoose from 'mongoose';
 
-//connection to the database
-const connectDb = async ()=>{
-    try{
-        await mongoose.connect(connectionString, {connectTimeoutMS: 2000});
-        console.log("Successfully connected to the database: boiteAlivres");
-    }catch(error){
-        console.error("Database connection failed. Retrying in 5 seconds...", error);
-        setTimeout(connectDb, 5000);
+const connectDB = async (): Promise<void> => {
+    try {
+        await mongoose.connect(process.env.DATABASE_URL as string);
+        console.log('MongoDB connected');
+    } catch (error) {
+        console.error('MongoDB connection error:', error);
+        process.exit(1);
     }
-}
-connectDb();
+};
+
+export default connectDB;

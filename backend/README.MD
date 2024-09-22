@@ -19,7 +19,7 @@ backend/
 │   ├── models/            # Database models (MongoDB or another database)
 │   ├── services/          # Business logic that can be reused (DB operations, etc.)
 │   ├── utils/             # Helper functions, utilities
-│   └── app.js             # Entry point of the backend application
+│   └── app.ts             # Entry point of the backend application
 ├── .env                   # Environment variables (not shared in version control)
 ├── .gitignore             # Files and folders to ignore in version control
 ├── package.json           # Node.js dependencies and scripts

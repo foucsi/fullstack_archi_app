@@ -1,18 +1,14 @@
-const {User} = require("../../models/userModel")
-const {asyncHandler} = require("express-async-handler")
-const {sendResponse} = require ("../../utils/sendResponse")
+import { Request, Response, NextFunction } from 'express';
+import asyncHandler from 'express-async-handler';
+const User = require( '../../models/userModel');
 
-/**
- * Récupère tous les utilisateurs.
- * @route GET /api/users
- * @access Private/Admin
- */
+export const getAllUsers = asyncHandler(async (req: Request, res: Response, next: NextFunction) => {
+    const users = await User.find();
 
-exports.getAllUsers = asyncHandler(async (req, res, next) => {
-    const users = await User.find().select("-password")
-    if(users.length === 0) {
-        const err = new Error("No users found")
-        return next(err)
+    if (users.length === 0) {
+        const err = new Error('No users found');
+        return next(err);
     }
-    sendResponse(res, 200, {users})
-})
+
+    res.status(200).json({ success: true, users });
+});
